@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Boring world</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .background {
+        background-image: url("./blackcheck.jpg");
+        background-position: center;
+        background-repeat: repeat;
+        color: hotpink;
+      }
+      .title {
+        font-family: Monoton;
+        font-size: 300px;
+        float: center;
+      }
+      .text {
+        color: black;
+        background-color: hotpink;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 40px;
+        float: right;
+        margin-top: -300px;
+      }
+      .thumb {
+        width: 200px;
+        height: 200px;
+        margin-left: 150px;
+      }
+
+      #thumb {
+        animation-name: thumbsdown;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }
+      @keyframes thumbsdown {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(180deg);
+        }
+      }
+      .unicorn {
+        width: 300px;
+        height: 300px;
+        margin-left: 500px;
+        margin-top: -600px;
+      }
+      #unicorn {
+        animation-name: unicorn;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: linear;
+      }
+      @keyframes unicorn {
+        0% {
+          transform: scale(0.8);
+        }
+        50% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1.2);
+        }
+      }
+    </style>
+  </head>
+  <body class="background"></body>
+  <div class="title">boring!</div>
+  <div>
+    <img src="./thumb.png" class="thumb" id="thumb" />
+    <div><img src="./unicorn2.png" class="unicorn" id="unicorn" /></div>
+    <div class="text">You just made a unicorn very unhappy</div>
+  </div>
+</html>

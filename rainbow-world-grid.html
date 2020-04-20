@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>rAiNbOw WoRlD!</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0px;
+      }
+      .grid {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 100vh;
+        background-image: linear-gradient(
+          90deg,
+          #dc143c,
+          #ff1493,
+          #ffd700,
+          #adff2f,
+          #87ceeb,
+          #7b68ee,
+          #800080
+        );
+      }
+      .div {
+        align-self: center;
+        justify-self: center;
+      }
+      .welcome {
+        font-family: "Monoton";
+        text-align: center;
+        font-size: 80px;
+        color: white;
+        grid-column: 1/4;
+        align-self: center;
+        justify-self: center;
+      }
+      .button {
+        background-color: black;
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 30px;
+        padding: 30px;
+        border-radius: 20%;
+      }
+      .button:hover {
+        transform: scale(1.2);
+      }
+      #button {
+        animation-name: colorful;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+      }
+      @keyframes colorful {
+        0% {
+          background-color: pink;
+        }
+        20% {
+          background-color: gold;
+        }
+        40% {
+          background-color: greenyellow;
+        }
+        60% {
+          background-color: blue;
+        }
+        80% {
+          background-color: purple;
+        }
+        100% {
+          background-color: black;
+        }
+      }
+      .unicorn {
+        width: 550px;
+        height: 400px;
+        position: absolute;
+      }
+
+      #unicorn {
+        animation-name: growunicorn;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }
+      @keyframes growunicorn {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .rainbow {
+        height: 200px;
+        width: 400px;
+      }
+      #rainbow {
+        animation-name: growrainbow;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+      }
+      @keyframes growrainbow {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(45deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+      .star {
+        width: 200px;
+        height: 200px;
+        float: right;
+        /* margin-top: -400px; */
+      }
+      #star {
+        animation-name: shootingstar;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-direction: alternate;
+      }
+
+      @keyframes shootingstar {
+        0% {
+          transform: skewY(0deg);
+        }
+        50% {
+          transform: skewY(-10deg);
+        }
+        100% {
+          transform: skewY(-20deg);
+        }
+      }
+      .kaboom {
+        display: none;
+        width: 20%;
+        height: 100px;
+        margin: auto;
+        border: gold double 5px;
+      }
+      #kaboom {
+        animation-name: kaboom;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+      }
+      @keyframes kaboom {
+        0% {
+          transform: scale(1) rotate(0deg);
+        }
+        25% {
+          transform: scale(2) rotate(90deg);
+        }
+        50% {
+          transform: scale(3) rotate(180deg);
+        }
+        75% {
+          transform: scale(4) rotate(270deg);
+        }
+        100% {
+          transform: scale(5) rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var enterPage = confirm(
+        "The following page may transport you to another universe. Do you want to continue?"
+      );
+      if (!enterPage) {
+        location.assign("./boring-world.html");
+        console.log("does it work");
+      }
+      console.log(enterPage);
+
+      function button() {
+        var person = prompt(
+          "Hello universe explorer. By what name should I call you?"
+        );
+        if (person) {
+          var proceed = confirm(
+            "Greetings " +
+              person +
+              " ! Would you like to enroll on the Unicorn bootcamp?"
+          );
+        }
+        if (!proceed) {
+          location.replace("./boring-world.html");
+        } else {
+          document.getElementById("kaboom").style.display = "block";
+        }
+      }
+    </script>
+    <div class="grid">
+      <div class="div welcome">Welcome to Rainbow World!</div>
+      <div><img src="./unicorn2.png" class="unicorn" id="unicorn" /></div>
+      <div class="div">
+        <button class="button" id="button" onclick="button()">
+          Press me!
+        </button>
+        <img src="./kaboom.jpg" class="kaboom" id="kaboom" />
+      </div>
+      <div><img src="./rainbow.png" class="rainbow" id="rainbow" /></div>
+      <div></div>
+      <div><img src="./shootingstar.png" class="star" id="star" /></div>
+      <div></div>
+    </div>
+  </body>
+</html>
