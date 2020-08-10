@@ -1,5 +1,7 @@
 # Rainbow World / Boring World
 
+![Rainbow World](./Images/rainbow-world-screenshot.PNG)
+
 ###### April 2020
 
 _This was a fun little project I made early on when I was exploring the use of images, animation, background gradients and interacting with the DOM._
